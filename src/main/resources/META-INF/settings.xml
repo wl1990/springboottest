@@ -1,0 +1,62 @@
+<settings>
+  <!--
+	  
+	  <localRepository>/Users/paopao/.m2/repository</localRepository>
+	  
+  -->
+
+  <servers>
+	<server>
+	  <id>releases</id>
+	  <username>deployment</username>
+	  <password>deployment123</password>
+	</server>
+	<server>
+	  <id>snapshots</id>
+	  <username>deployment</username>
+	  <password>deployment123</password>
+	</server>
+  </servers>
+
+  <profiles>
+	<profile>
+	  <id>mynexus</id>
+	  <repositories>
+		<repository>
+		  <id>myrepo</id>
+		  <name>my personal repo</name>
+		  <url>http://10.77.144.192:11081/nexus/content/groups/public/</url>
+		  <releases>
+			<enabled>true</enabled>
+			<updatePolicy>never</updatePolicy>
+		  </releases>
+		  <snapshots>
+			<enabled>
+			  true
+			</enabled>
+			<updatePolicy>never</updatePolicy>
+		  </snapshots>
+		</repository>
+	  </repositories>
+	  <pluginRepositories>
+		<pluginRepository>
+		  <id>myPlugRepo</id>
+		  <name>my personal plug repo</name>
+		  <url>http://10.77.144.192:11081/nexus/content/groups/public/</url>
+		  <releases>
+			<enabled>true</enabled>
+			<updatePolicy>never</updatePolicy>
+		  </releases>
+		  <snapshots>
+			<enabled>true</enabled>
+			<updatePolicy>never</updatePolicy>
+		  </snapshots>
+		</pluginRepository>
+	  </pluginRepositories>
+	</profile>
+  </profiles>
+  <activeProfiles>
+	<!--make the profile active all the time -->
+	<activeProfile>mynexus</activeProfile>
+  </activeProfiles>
+</settings>
